@@ -1,0 +1,20 @@
+export enum Message {
+    SOMETHING_WENT_WRONG = " Something went wrong!",
+    NO_DATA_FOUND = "No data is found!",
+    CREATE_FAILED = "Create is failed!",
+    UPDATE_FAILED = "Update is failed!",
+    REMOVE_FAILED = "Remove failed!",
+    UPLOAD_FAILED = "Upload failed!",
+    BBAD_REQUEST = "Bad request!",
+
+    NO_MEMBER_NICK = "No member with member nick!",
+    BLOCKED_USER = "You have been blocked!",
+    WRONG_PASSWORD = "Wrong password please try again!",
+    NOT_AUTHENTICATED = "You are not athenticated, Please login first",
+    TOKEN_NOT_EXIST = 'Bearer Token is not provided!',
+    ONLY_SPECIFIC_ROLES_ALLOWED= 'Allowed only for members with specific roles!',
+    NOT_ALLOWED_REQUEST = "Not Allowed Request!",
+    PROVIDE_ALLOWED_FORMAT = "Please provide jpg, jpeg or png iamges!",
+    SELF_SUBSCRIPTION_DENIED  = "Self subscription is denied!",
+    
+}
