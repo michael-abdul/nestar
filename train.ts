@@ -1,3 +1,71 @@
+
+
+// ZK-TASK:
+
+// Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
+// MASALAN: printNumbers()
+
+
+
+function printNumbers() {
+  let count = 1;
+  const interval = setInterval(function() {
+      console.log(count);
+      count++;
+      if (count > 5) {
+          clearInterval(interval);
+      }
+  }, 1000);
+}
+
+printNumbers();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ZJ-TASK:
 
 // Shunday function yozing,
@@ -6,14 +74,14 @@
 
 
 
-function reduceNestedArray(data) {
-  return data.reduce((sum, item) => sum + (typeof item === 'number' ? item : reduceNestedArray(item)), 0);
-}
+// function reduceNestedArray(data) {
+//   return data.reduce((sum, item) => sum + (typeof item === 'number' ? item : reduceNestedArray(item)), 0);
+// }
 
-// Example usage
-const data = [1, [1, 2, [4]]];
-const result = reduceNestedArray(data);
-console.log(result); 
+// // Example usage
+// const data = [1, [1, 2, [4]]];
+// const result = reduceNestedArray(data);
+// console.log(result); 
 
 
 
