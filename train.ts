@@ -1,3 +1,25 @@
+// ZL-TASK:
+
+// Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib
+//  qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+// MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+
+
+
+
+
+
+function stringToKebab(str) {
+  return str.toLowerCase().split(' ').join('-');
+}
+
+
+console.log(stringToKebab("I love Kebab")); 
+
+
+
+
+
 
 
 // ZK-TASK:
@@ -7,18 +29,18 @@
 
 
 
-function printNumbers() {
-  let count = 1;
-  const interval = setInterval(function() {
-      console.log(count);
-      count++;
-      if (count > 5) {
-          clearInterval(interval);
-      }
-  }, 1000);
-}
+// function printNumbers() {
+//   let count = 1;
+//   const interval = setInterval(function() {
+//       console.log(count);
+//       count++;
+//       if (count > 5) {
+//           clearInterval(interval);
+//       }
+//   }, 1000);
+// }
 
-printNumbers();
+// printNumbers();
 
 
 
