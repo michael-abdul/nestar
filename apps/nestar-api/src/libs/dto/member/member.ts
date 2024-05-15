@@ -66,12 +66,15 @@ export class Member {
 	@Field(() => Int)
 	memberBlocks: number;
 
-    @Field (()=> Date, {nullable:true})
-    deletedAt?:Date
+	@Field(() => Date, { nullable: true })
+	deletedAt?: Date;
 
-    @Field (()=> Date)
-    createdAt:Date
+	@Field(() => Date)
+	createdAt: Date;
 
-    @Field (()=> Date)
-    updatedAt:Date
+	@Field(() => Date)
+	updatedAt: Date;
+
+	@Field(() => String, { nullable: true })
+	accessToken?: string;
 }

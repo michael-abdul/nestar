@@ -7,7 +7,6 @@ import { MemberStatus } from '../../libs/enums/member.enum';
 import { Message } from '../../libs/enums/common.enum';
 import { AuthService } from '../auth/auth.service';
 
-
 @Injectable()
 export class MemberService {
 	constructor(
@@ -21,6 +20,7 @@ export class MemberService {
 		try {
 			const result = await this.memberModel.create(input);
 			// TODO: Authentication token
+			result.accessToken = await this.authService.createToken(result);
 
 			return result;
 		} catch (err) {
@@ -43,10 +43,10 @@ export class MemberService {
 
 		//TODO: Compare passwords
 
-		const isMatch = await this.authService.comparePasswords(input.memberPassword, response.memberPassword );
-	console.log("isMatch", isMatch)
+		const isMatch = await this.authService.comparePasswords(input.memberPassword, response.memberPassword);
 		if (!isMatch) throw new InternalServerErrorException(Message.WRONG_PASSWORD);
 
+		response.accessToken = await this.authService.createToken(response);
 		return response;
 	}
 	public async updateMember(): Promise<string> {
