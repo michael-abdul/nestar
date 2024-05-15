@@ -1,3 +1,65 @@
+
+// ZM-TASK:
+
+// Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
+// MASALAN: reverseInteger(123456789) return 987654321
+
+
+function reverseInteger(num) {
+  let reversedNum = parseInt(num.toString().split('').reverse().join(''));
+  return reversedNum;
+}
+
+
+console.log(reverseInteger(123456789));  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ZL-TASK:
 
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib
@@ -9,12 +71,12 @@
 
 
 
-function stringToKebab(str) {
-  return str.toLowerCase().split(' ').join('-');
-}
+// function stringToKebab(str) {
+//   return str.toLowerCase().split(' ').join('-');
+// }
 
 
-console.log(stringToKebab("I love Kebab")); 
+// console.log(stringToKebab("I love Kebab")); 
 
 
 
