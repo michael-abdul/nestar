@@ -1,64 +1,68 @@
+// ZN-TASK:
+
+// Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
+// MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
+function rotateArray(arr, index) {
+	return arr.slice(index + 1).concat(arr.slice(0, index + 1));
+}
+
+
+const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ZM-TASK:
 
 // Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
 // MASALAN: reverseInteger(123456789) return 987654321
 
+// function reverseInteger(num) {
+//   let reversedNum = parseInt(num.toString().split('').reverse().join(''));
+//   return reversedNum;
+// }
 
-function reverseInteger(num) {
-  let reversedNum = parseInt(num.toString().split('').reverse().join(''));
-  return reversedNum;
-}
-
-
-console.log(reverseInteger(123456789));  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(reverseInteger(123456789));
 
 // ZL-TASK:
 
@@ -66,30 +70,16 @@ console.log(reverseInteger(123456789));
 //  qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
-
-
-
-
-
 // function stringToKebab(str) {
 //   return str.toLowerCase().split(' ').join('-');
 // }
 
-
-// console.log(stringToKebab("I love Kebab")); 
-
-
-
-
-
-
+// console.log(stringToKebab("I love Kebab"));
 
 // ZK-TASK:
 
 // Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
 // MASALAN: printNumbers()
-
-
 
 // function printNumbers() {
 //   let count = 1;
@@ -104,59 +94,11 @@ console.log(reverseInteger(123456789));
 
 // printNumbers();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ZJ-TASK:
 
 // Shunday function yozing,
 //  u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
 // MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
-
-
 
 // function reduceNestedArray(data) {
 //   return data.reduce((sum, item) => sum + (typeof item === 'number' ? item : reduceNestedArray(item)), 0);
@@ -165,31 +107,7 @@ console.log(reverseInteger(123456789));
 // // Example usage
 // const data = [1, [1, 2, [4]]];
 // const result = reduceNestedArray(data);
-// console.log(result); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log(result);
 
 // Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
 // MASALAN: celsiusToFahrenheit(0) return 32
