@@ -1,54 +1,53 @@
+// ZP-TASK:
+
+// Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+// MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 2
+
+function majorityElement(nums) {
+	let counts = {};
+	let majorityElement = nums[0];
+
+	nums.reduce((maxCount, num) => {
+		counts[num] = (counts[num] || 0) + 1;
+		if (counts[num] > maxCount) {
+			majorityElement = num;
+			return counts[num];
+		}
+		return maxCount;
+	}, 0);
+
+	return majorityElement;
+}
+
+console.log(majorityElement([1, 2, 3, 4, 5, 2, 2, 4, 2, 3, 4]));
+
 // ZO-TASK:
 // Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
 // MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
 // make in javascript
 
-function areParenthesesBalanced(str) {
-    let balance = 0;
-    
-    for (let char of str) {
-        if (char === '(') {
-            balance++;
-        } else if (char === ')') {
-            balance--;
-        }
-        
-        if (balance < 0) {
-            return false;
-        }
-    }
-    
+// function areParenthesesBalanced(str) {
+//     let balance = 0;
 
-    return balance === 0;
-}
+//     for (let char of str) {
+//         if (char === '(') {
+//             balance++;
+//         } else if (char === ')') {
+//             balance--;
+//         }
 
-// Example usage:
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
-console.log(areParenthesesBalanced("((string()ichida(qavslar)soni()balansda")); // false
-console.log(areParenthesesBalanced("string()ichida)qavslar(soni()balansda")); // false
+//         if (balance < 0) {
+//             return false;
+//         }
+//     }
 
+//     return balance === 0;
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // Example usage:
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+// console.log(areParenthesesBalanced("((string()ichida(qavslar)soni()balansda")); // false
+// console.log(areParenthesesBalanced("string()ichida)qavslar(soni()balansda")); // false
 
 // ZN-TASK:
 
@@ -58,51 +57,8 @@ console.log(areParenthesesBalanced("string()ichida)qavslar(soni()balansda")); //
 // 	return arr.slice(index + 1).concat(arr.slice(0, index + 1));
 // }
 
-
 // const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
 // console.log(result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ZM-TASK:
 
