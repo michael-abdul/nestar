@@ -1,7 +1,12 @@
 import { Query, Args, Mutation, Resolver } from '@nestjs/graphql';
 import { PropertyService } from './property.service';
 import { Properties, Property } from '../../libs/dto/property/property';
-import { AgentPropertiesInquiry, AllPropertiesInquiry, PropertiesInquiry, PropertyInput } from '../../libs/dto/property/property.input';
+import {
+	AgentPropertiesInquiry,
+	AllPropertiesInquiry,
+	PropertiesInquiry,
+	PropertyInput,
+} from '../../libs/dto/property/property.input';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { UseGuards } from '@nestjs/common';
 import { MemberType } from '../../libs/enums/member.enum';
@@ -48,7 +53,7 @@ export class PropertyResolver {
 	): Promise<Property> {
 		console.log('Mutation: updateProperty');
 		input._id = shapeIntoMongoObjectId(input._id);
-		return await this.propertyService.updateProperty(memberId, input)
+		return await this.propertyService.updateProperty(memberId, input);
 	}
 
 	@UseGuards(WithoutGuard)
@@ -61,7 +66,6 @@ export class PropertyResolver {
 		return await this.propertyService.getProperties(memberId, input);
 	}
 
-
 	@Roles(MemberType.AGENT)
 	@UseGuards(RolesGuard)
 	@Query((returns) => Properties)
@@ -71,7 +75,6 @@ export class PropertyResolver {
 	): Promise<Properties> {
 		console.log('Query: getAgentProperties');
 		return await this.propertyService.getAgentProperties(memberId, input);
-
 	}
 
 	/**ADMIN */
@@ -85,6 +88,14 @@ export class PropertyResolver {
 	): Promise<Properties> {
 		console.log('Query: getAllPropertiesByAdmin');
 		return await this.propertyService.getAllPropertiesByAdmin(input);
+	}
 
+	@Roles(MemberType.ADMIN)
+	@UseGuards(RolesGuard)
+	@Mutation((returns) => Property)
+	public async updatePropertyByAdmin(@Args('input') input: PropertyUpdate): Promise<Property> {
+		console.log('Mutation: updatePropertyByAdmin');
+		input._id = shapeIntoMongoObjectId(input._id);
+		return await this.propertyService.updatePropertyByAdmin(input);
 	}
 }
