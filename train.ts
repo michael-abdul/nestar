@@ -1,25 +1,54 @@
+// ZQ-TASK:
+
+// Shunday function yozing, u parametridagi array ichida
+//  2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+// MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+
+function findDuplicates(arr) {
+	const duplicates = [];
+	const counts = {};
+  
+	for (const num of arr) {
+	  counts[num] = (counts[num] || 0) + 1;
+	}
+  
+	for (const num in counts) {
+	  if (counts[num] > 1) {
+		duplicates.push(Number(num));
+	  }
+	}
+  
+	return duplicates;
+  }
+  
+  // Example usage
+  const myArray = [1, 2, 3, 4, 5, 4, 3, 4];
+  const duplicateNumbers = findDuplicates(myArray);
+  console.log(duplicateNumbers); 
+  
+
 // ZP-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 // MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 2
 
-function majorityElement(nums) {
-	let counts = {};
-	let majorityElement = nums[0];
+// function majorityElement(nums) {
+// 	let counts = {};
+// 	let majorityElement = nums[0];
 
-	nums.reduce((maxCount, num) => {
-		counts[num] = (counts[num] || 0) + 1;
-		if (counts[num] > maxCount) {
-			majorityElement = num;
-			return counts[num];
-		}
-		return maxCount;
-	}, 0);
+// 	nums.reduce((maxCount, num) => {
+// 		counts[num] = (counts[num] || 0) + 1;
+// 		if (counts[num] > maxCount) {
+// 			majorityElement = num;
+// 			return counts[num];
+// 		}
+// 		return maxCount;
+// 	}, 0);
 
-	return majorityElement;
-}
+// 	return majorityElement;
+// }
 
-console.log(majorityElement([1, 2, 3, 4, 5, 2, 2, 4, 2, 3, 4]));
+// console.log(majorityElement([1, 2, 3, 4, 5, 2, 2, 4, 2, 3, 4]));
 
 // ZO-TASK:
 // Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
