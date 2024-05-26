@@ -21,7 +21,6 @@ export class MemberService {
 		private authService: AuthService,
 		private viewService: ViewService,
 		private likeService: LikeService,
-
 	) {}
 
 	public async signup(input: MemberInput): Promise<Member> {
@@ -131,11 +130,10 @@ export class MemberService {
 			likeRefId: likeRefId,
 			likeGroup: LikeGroup.MEMBER,
 		};
-		// LIKE TOGGLE
 		const modifier: number = await this.likeService.toggleLike(input);
 		const result = await this.memberStatsEditor({ _id: likeRefId, targetKey: 'memberLikes', modifier: modifier });
-		if(!result) throw new InternalServerErrorException(Message.SOMETHING_WENT_WRONG)
-			return result
+		if (!result) throw new InternalServerErrorException(Message.SOMETHING_WENT_WRONG);
+		return result;
 	}
 
 	public async getAllMembersByAdmin(input: MembersInquiry): Promise<Members> {
