@@ -1,23 +1,58 @@
+// ZS-TASK:
+
+// Shunday function yozing, u parametridagi arrayni ichidagi bir marta kelgan elemnetni qaytarsin.
+// MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
+
+
+function singleNumber(nums) {
+    const countDict = {};
+    for (let num of nums) {
+        if (countDict[num]) {
+            countDict[num]++;
+        } else {
+            countDict[num] = 1;
+        }
+    }
+    for (let num in countDict) {
+        if (countDict[num] === 1) {
+            return num;
+        }
+    }
+}
+
+console.log(singleNumber([4, 2, 1, 2, 1, 9, 4]));  
+
+
+
+
+
+
+
+
+
+
+
+
 // ZR-TASK:
 
 // Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
 // MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
 
 
-function countNumberAndLetters(inputString: string): { number: number, letter: number } {
-    const result = Array.from(inputString).reduce((acc, char) => {
-        if (char >= '0' && char <= '9') {
-            acc.number += 1;
-        } else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
-            acc.letter += 1;
-        }
-        return acc;
-    }, { number: 0, letter: 0 });
+// function countNumberAndLetters(inputString: string): { number: number, letter: number } {
+//     const result = Array.from(inputString).reduce((acc, char) => {
+//         if (char >= '0' && char <= '9') {
+//             acc.number += 1;
+//         } else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+//             acc.letter += 1;
+//         }
+//         return acc;
+//     }, { number: 0, letter: 0 });
     
-    return result;
-}
-const result = countNumberAndLetters("string152%¥");
-console.log(result); 
+//     return result;
+// }
+// const result = countNumberAndLetters("string152%¥");
+// console.log(result); 
 
 
 
