@@ -1,26 +1,59 @@
+// ZT-TASK:
+
+// Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan
+// birinchi harf indeksini qaytarsin.
+// MASALAN: firstUniqueCharIndex(“stamp”) return 0
+
+function firstUniqueCharIndex(str) {
+    const charCounts = {};
+
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i];
+      charCounts[char] = (charCounts[char] || 0) + 1;
+    }
+
+    for (let i = 0; i < str.length; i++) {
+      if (charCounts[str[i]] === 1) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  console.log(firstUniqueCharIndex("stamp"));  
+  console.log(firstUniqueCharIndex("leetcode"));  
+  console.log(firstUniqueCharIndex("loveleetcode"));  
+  
+
+
+
+
+
+
+
+
 // ZS-TASK:
 
 // Shunday function yozing, u parametridagi arrayni ichidagi bir marta kelgan elemnetni qaytarsin.
 // MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
 
 
-function singleNumber(nums) {
-    const countDict = {};
-    for (let num of nums) {
-        if (countDict[num]) {
-            countDict[num]++;
-        } else {
-            countDict[num] = 1;
-        }
-    }
-    for (let num in countDict) {
-        if (countDict[num] === 1) {
-            return num;
-        }
-    }
-}
+// function singleNumber(nums) {
+//     const countDict = {};
+//     for (let num of nums) {
+//         if (countDict[num]) {
+//             countDict[num]++;
+//         } else {
+//             countDict[num] = 1;
+//         }
+//     }
+//     for (let num in countDict) {
+//         if (countDict[num] === 1) {
+//             return num;
+//         }
+//     }
+// }
 
-console.log(singleNumber([4, 2, 1, 2, 1, 9, 4]));  
+// console.log(singleNumber([4, 2, 1, 2, 1, 9, 4]));  
 
 
 
