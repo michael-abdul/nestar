@@ -62,13 +62,12 @@ export const lookupAuthMemberLiked = (memberId: T, targetRefId: string = '$_id')
 };
 
 interface LookupAuthMemberFollowed {
-	followerId: T,
+	followerId: T;
 	followingId: string;
 }
 
-
-export const lookupAuthMemberFollowed= (input:LookupAuthMemberFollowed) => {
-	const {followerId,followingId } = input;
+export const lookupAuthMemberFollowed = (input: LookupAuthMemberFollowed) => {
+	const { followerId, followingId } = input;
 	return {
 		$lookup: {
 			from: 'follows',
@@ -123,14 +122,25 @@ export const lookupFollowerData = {
 		foreignField: '_id',
 		as: 'followerData',
 	},
-}
-
-	export const lookupFavorite = {
-		$lookup: {
-			from: 'members',
-			localField: 'favoriteProperty.memberId',
-			foreignField: '_id',
-			as: 'favoriteProperty.memberData',
-		},
-	
 };
+
+export const lookupFavorite = {
+	$lookup: {
+		from: 'members',
+		localField: 'favoriteProperty.memberId',
+		foreignField: '_id',
+		as: 'favoriteProperty.memberData',
+	},
+};
+
+
+export const lookupVisit = {
+	$lookup: {
+		from: 'members',
+		localField: 'visitedProperty.memberId',
+		foreignField: '_id',
+		as: 'visitedProperty.memberData',
+	},
+
+};
+
