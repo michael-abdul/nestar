@@ -1,27 +1,63 @@
+// ZU-TASK:
+
+// Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+// MASALAN: sumOfUnique([1,2,3,2]) return 4
+
+// @MITASK
+
+function sumOfUnique(nums) {
+  const count = {};
+  
+  for (const num of nums) {
+      if (count[num]) {
+          count[num]++;
+      } else {
+          count[num] = 1;
+      }
+  }
+  
+  let uniqueSum = 0;
+  for (const num in count) {
+      if (count[num] === 1) {
+          uniqueSum += parseInt(num);
+      }
+  }
+  
+  return uniqueSum;
+}
+
+console.log(sumOfUnique([1, 2, 3, 2]));  
+console.log(sumOfUnique([1, 2, 2, 2, 2]));  
+console.log(sumOfUnique([1, 2, 3, 4]));  
+console.log(sumOfUnique([1, 1, 1, 1])); 
+
+
+
+
 // ZT-TASK:
 
 // Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan
 // birinchi harf indeksini qaytarsin.
 // MASALAN: firstUniqueCharIndex(“stamp”) return 0
 
-function firstUniqueCharIndex(str) {
-    const charCounts = {};
+// function firstUniqueCharIndex(str) {
+//     const charCounts = {};
 
-    for (let i = 0; i < str.length; i++) {
-      const char = str[i];
-      charCounts[char] = (charCounts[char] || 0) + 1;
-    }
+//     for (let i = 0; i < str.length; i++) {
+//       const char = str[i];
+//       charCounts[char] = (charCounts[char] || 0) + 1;
+//     }
 
-    for (let i = 0; i < str.length; i++) {
-      if (charCounts[str[i]] === 1) {
-        return i;
-      }
-    }
-    return -1;
-  }
-  console.log(firstUniqueCharIndex("stamp"));  
-  console.log(firstUniqueCharIndex("leetcode"));  
-  console.log(firstUniqueCharIndex("loveleetcode"));  
+//     for (let i = 0; i < str.length; i++) {
+//       if (charCounts[str[i]] === 1) {
+//         return i;
+//       }
+//     }
+//     return -1;
+//   }
+//   console.log(firstUniqueCharIndex("stamp"));  
+//   console.log(firstUniqueCharIndex("leetcode"));  
+//   console.log(firstUniqueCharIndex("loveleetcode"));  
   
 
 
